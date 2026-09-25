@@ -1,0 +1,236 @@
+{
+  "project_name": "Algorythm",
+  "tagline": "Experience algorithms in motion.",
+  "philosophy": "WATCH → TRACE → UNDERSTAND. Don't just show what the algorithm does; show the process that produces the result and explain why each step happens with absolute visual & textual clarity.",
+  "app_type": "interactive_edtech_tool",
+  "tech_stack": {
+    "framework": "React.js (JavaScript / .js / .jsx)",
+    "styling": "Tailwind CSS + CSS Custom Properties",
+    "components": "Shadcn UI primitives customized + Lucide React icons",
+    "animation": "Framer Motion / Tailwind animations"
+  },
+  "themes": {
+    "default_theme": "light",
+    "persistence_key": "algorythm_theme",
+    "toggle_mechanism": "Manual toggle switch in Header, persisting to localStorage and setting 'dark' class on <html> element",
+    "light_mode": {
+      "background": "#F4F7F6",
+      "surface": "#FFFFFF",
+      "surface_elevated": "#EAEFEF",
+      "border": "#D5E0DF",
+      "border_subtle": "#E2ECEB",
+      "text_primary": "#0F2926",
+      "text_secondary": "#3B5A56",
+      "text_muted": "#688480",
+      "accent_primary": "#0D9488",
+      "accent_hover": "#0F766E",
+      "accent_subtle": "#CCFBF1",
+      "code_bg": "#E6F0EF"
+    },
+    "dark_mode": {
+      "background": "#081312",
+      "surface": "#0E1E1C",
+      "surface_elevated": "#142825",
+      "border": "#1E3B37",
+      "border_subtle": "#162D29",
+      "text_primary": "#E6F4F1",
+      "text_secondary": "#99C2BC",
+      "text_muted": "#5C857E",
+      "accent_primary": "#14B8A6",
+      "accent_hover": "#2DD4BF",
+      "accent_subtle": "#0F3D38",
+      "code_bg": "#0B1817"
+    }
+  },
+  "typography": {
+    "font_family_primary": "Inter, -apple-system, BlinkMacSystemFont, sans-serif",
+    "font_family_technical": "'JetBrains Mono', Consolas, Monaco, monospace",
+    "google_fonts_import": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap",
+    "usage_rules": {
+      "Inter": "Use for Header brand title, navigation tabs, section headings, action buttons, descriptions, step inspector prose, general UI labels.",
+      "JetBrains Mono": "Use strictly for step counters, array cell values, trace indices, queue/stack node labels, data structures state values, code snippets, complexity Big-O notations."
+    },
+    "scale": {
+      "brand_title": "text-xl font-bold tracking-tight",
+      "tagline": "text-xs font-normal tracking-wide text-muted-foreground hidden sm:inline-block",
+      "h1_algorithm_title": "text-2xl md:text-3xl font-bold text-foreground tracking-tight",
+      "algorithm_description": "text-sm md:text-base text-muted-foreground leading-relaxed",
+      "section_heading": "text-xs font-semibold uppercase tracking-wider text-muted-foreground",
+      "body": "text-sm leading-normal text-foreground",
+      "technical_counter": "font-mono text-sm md:text-base font-semibold",
+      "technical_badge": "font-mono text-xs font-medium px-2 py-0.5 rounded"
+    }
+  },
+  "semantic_visualization_states": {
+    "description": "Visual feedback MUST use both color AND distinct geometric indicators (icons, badges, outlines, elevation) to ensure accessibility and clarity.",
+    "states": {
+      "neutral": {
+        "label": "Neutral / Idle",
+        "light": { "bg": "#E2ECEB", "border": "#B0C4C1", "text": "#0F2926" },
+        "dark": { "bg": "#142825", "border": "#1E3B37", "text": "#E6F4F1" },
+        "indicator": "Standard bar / simple node boundary"
+      },
+      "active": {
+        "label": "Active Pointer / Current Focus",
+        "light": { "bg": "#0D9488", "border": "#0F766E", "text": "#FFFFFF" },
+        "dark": { "bg": "#14B8A6", "border": "#2DD4BF", "text": "#081312" },
+        "indicator": "Pointer arrow overlay + pulse animation + bold border"
+      },
+      "comparing": {
+        "label": "Comparing Elements",
+        "light": { "bg": "#D97706", "border": "#B45309", "text": "#FFFFFF" },
+        "dark": { "bg": "#F59E0B", "border": "#FBBF24", "text": "#081312" },
+        "indicator": "Double-headed arrow badge or amber outline ring"
+      },
+      "swapping": {
+        "label": "Swapping Elements",
+        "light": { "bg": "#DC2626", "border": "#B91C1C", "text": "#FFFFFF" },
+        "dark": { "bg": "#EF4444", "border": "#F87171", "text": "#FFFFFF" },
+        "indicator": "Horizontal swap curved arrows icon + spring transition"
+      },
+      "selected": {
+        "label": "Selected / Sub-range (Pivot / Low / High / Mid)",
+        "light": { "bg": "#0284C7", "border": "#0369A1", "text": "#FFFFFF" },
+        "dark": { "bg": "#38BDF8", "border": "#7DD3FC", "text": "#081312" },
+        "indicator": "Distinct label badge above element (e.g. LOW, MID, HIGH, PIVOT)"
+      },
+      "visited": {
+        "label": "Visited (Graph / Tree Traversal)",
+        "light": { "bg": "#6366F1", "border": "#4F46E5", "text": "#FFFFFF" },
+        "dark": { "bg": "#818CF8", "border": "#A5B4FC", "text": "#081312" },
+        "indicator": "Checkmark icon inside node + subtle hashed border"
+      },
+      "found": {
+        "label": "Target Found / Match",
+        "light": { "bg": "#16A34A", "border": "#15803D", "text": "#FFFFFF" },
+        "dark": { "bg": "#22C55E", "border": "#4ADE80", "text": "#081312" },
+        "indicator": "Target bullseye icon badge + scale pulse ring"
+      },
+      "sorted": {
+        "label": "Sorted / Completed State",
+        "light": { "bg": "#059669", "border": "#047857", "text": "#FFFFFF" },
+        "dark": { "bg": "#10B981", "border": "#34D399", "text": "#081312" },
+        "indicator": "Lock icon or solid green fill with subtle top shine"
+      },
+      "error": {
+        "label": "Invalid State / Out of Bounds",
+        "light": { "bg": "#E11D48", "border": "#BE123C", "text": "#FFFFFF" },
+        "dark": { "bg": "#F43F5E", "border": "#FB7185", "text": "#FFFFFF" },
+        "indicator": "Warning alert symbol + subtle shake"
+      }
+    }
+  },
+  "layout_architecture": {
+    "header": {
+      "height": "h-16 (4rem)",
+      "position": "sticky top-0 z-50 backdrop-blur-md bg-background/90 border-b border-border",
+      "elements": [
+        "Brand Logo & Title ('Algorythm')",
+        "Tagline ('Experience algorithms in motion.')",
+        "5 Algorithm Tabs (Bubble Sort, Merge Sort, Binary Search, BFS, DFS)",
+        "Light/Dark Mode Manual Toggle Button"
+      ]
+    },
+    "algorithm_page_flow": [
+      {
+        "section": "1. Identity & Overview Header",
+        "description": "Algorithm title, algorithm badge, brief functional explanation, and target domain."
+      },
+      {
+        "section": "2. Input & Control Bar",
+        "description": "Interactive dataset generator (Randomize, Custom Array input text field with validation, Target value input for binary search, preset graph selectors)."
+      },
+      {
+        "section": "3. Interactive Canvas (Strongest Emphasis)",
+        "description": "Min height 360px - 440px. High visual hierarchy container with clean grid background, dynamic rendering of bars, trees, arrays, or graph nodes. Displays live pointers and index labels."
+      },
+      {
+        "section": "4. Shared Playback Controller",
+        "description": "Sticky/pinned floating control deck with First Step (|<), Prev Step (<), Play/Pause, Next Step (>), Last Step (>|), Reset, Speed slider (0.25x to 4x), and interactive Progress Bar scrubbing."
+      },
+      {
+        "section": "5. Current Step Inspector Panel",
+        "description": "Three structured sub-cards: [1] What's Happening Now (Direct observation), [2] Why This Step Matters (Algorithm intuition & invariants), [3] Live Trace Variables (State counters, indices, active stack/queue contents)."
+      },
+      {
+        "section": "6. Complexity Info Cards",
+        "description": "4 compact metrics: Best Case Time Complexity, Average Case Time Complexity, Worst Case Time Complexity, and Space Complexity with clear Big-O syntax and explanation tooltip."
+      }
+    ]
+  },
+  "algorithm_specifications": {
+    "bubble_sort": {
+      "name": "Bubble Sort",
+      "type": "Sorting",
+      "visual_mode": "Bar Chart + Pointer Markers",
+      "unique_features": "Outer loop counter (Pass i), inner loop pointer (j vs j+1 comparison), swapped flag indicator, rightmost elements lock into 'sorted' state as passes complete."
+    },
+    "merge_sort": {
+      "name": "Merge Sort",
+      "type": "Divide & Conquer",
+      "visual_mode": "Recursive Tree Decomposition + Merging Array Buffer",
+      "unique_features": "Split phase visualized as tree levels, merge phase showing 2 sorted subarrays combining into target array with dual pointers."
+    },
+    "binary_search": {
+      "name": "Binary Search",
+      "type": "Searching",
+      "visual_mode": "Sorted Array + Low/Mid/High Pointer Flags",
+      "unique_features": "Target value highlights, low (blue), high (amber), mid (teal active) indicators, dimmed out-of-range discarded halves on each step."
+    },
+    "bfs": {
+      "name": "Breadth-First Search (BFS)",
+      "type": "Graph Traversal",
+      "visual_mode": "Node Graph Diagram + FIFO Queue Deck",
+      "unique_features": "Graph with numbered nodes & edges, highlight current node, push adjacent nodes into animated FIFO Queue strip, mark visited nodes with checkmarks."
+    },
+    "dfs": {
+      "name": "Depth-First Search (DFS)",
+      "type": "Graph Traversal",
+      "visual_mode": "Node Graph Diagram + LIFO Stack Deck",
+      "unique_features": "Graph traversal with active backtracking indication, push to LIFO Stack strip, mark visited nodes, highlight stack pop and push operations."
+    }
+  },
+  "testing_and_accessibility": {
+    "data_testid_convention": "kebab-case, role-based, clear and unambiguous",
+    "required_data_testids": [
+      "app-header",
+      "brand-logo",
+      "theme-toggle-btn",
+      "algo-nav-bubble-sort",
+      "algo-nav-merge-sort",
+      "algo-nav-binary-search",
+      "algo-nav-bfs",
+      "algo-nav-dfs",
+      "algorithm-title",
+      "algorithm-description",
+      "input-custom-array",
+      "btn-generate-random",
+      "btn-apply-input",
+      "input-target-value",
+      "visualization-canvas",
+      "playback-play-pause-btn",
+      "playback-prev-btn",
+      "playback-next-btn",
+      "playback-reset-btn",
+      "playback-speed-slider",
+      "playback-progress-bar",
+      "step-counter-display",
+      "inspector-panel",
+      "inspector-whats-happening",
+      "inspector-why-this-step",
+      "inspector-trace-variables",
+      "complexity-card-best-time",
+      "complexity-card-avg-time",
+      "complexity-card-worst-time",
+      "complexity-card-space"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Strictly follow the WATCH → TRACE → UNDERSTAND design principle.",
+    "Implement Light and Dark modes with clean transitions and persist the setting in localStorage.",
+    "Use Inter for UI elements and JetBrains Mono selectively for technical data, step counters, arrays, code, and complexity cards.",
+    "Ensure all 5 algorithms are fully operational with step-by-step frame generation, state inspection, and playback control.",
+    "Include data-testid on all interactive buttons, inputs, canvas elements, step counters, and inspector panels for testing verification.",
+    "Keep spacing generous and layout calm: minimal visual noise, subtle borders, high clarity."
+  ]
+}
