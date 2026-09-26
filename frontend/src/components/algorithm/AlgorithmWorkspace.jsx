@@ -73,7 +73,7 @@ export const AlgorithmWorkspace = ({ algoKey, onBack }) => {
         wasPlaying,
       });
     }
-  }, [currentStepIndex, nextStep, learningMode, meta.kind, activeQuestion, playback.isPlaying, playback]);
+  }, [currentStepIndex, current, nextStep, learningMode, meta.kind, activeQuestion, playback.isPlaying, playback]);
 
   const handleAnswerQuestion = (optionIndex) => {
     if (!activeQuestion) return;
